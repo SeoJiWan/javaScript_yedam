@@ -1,0 +1,96 @@
+@font-face {
+  font-family: bm;
+  src: url(../font/bamin/BMEuljiro10yearslater.ttf);
+}
+
+label,
+legend,
+h2 {
+  font-family: bm;
+}
+
+h2 {
+  padding: 10px 15px;
+  font-weight: 600;
+}
+
+div {
+  background-color: rgba(10, 150, 230, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  width: 150px;
+  margin: 0 auto;
+}
+
+form {
+  width: 500px;
+  margin: 0 auto;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+fieldset {
+  margin-bottom: 20px;
+}
+
+fieldset legend {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+form ul li {
+  list-style: none;
+  margin-bottom: 5px;
+  padding: 5px;
+  margin-right: 40px;
+}
+
+label {
+  /* inline 이라 width 가 안 먹음 -> display: inline-block */
+  display: inline-block;
+  width: 100px;
+}
+
+input {
+  padding: 3px;
+  width: 170px;
+}
+
+/* 배송자 정보 */
+.add_box {
+  width: 220px;
+}
+
+.memo1 {
+  /* background-color: red; */
+  float: left;
+  margin-right: 5px;
+}
+
+/* 주문 정보 */
+.ck li {
+  font-family: bm;
+}
+
+.ck li input {
+  width: 30px;
+}
+
+/* 하단 버튼 */
+.btn {
+  border: none;
+  text-align: right;
+  padding: 0;
+}
+
+.btn input {
+  width: 80px;
+  font-family: bm;
+  border: none;
+  background-color: rgba(10, 150, 230, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+}

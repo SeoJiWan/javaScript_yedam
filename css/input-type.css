@@ -1,0 +1,84 @@
+@font-face {
+  font-family: bm;
+  src: url(../font/bamin/BMEuljiro10yearslater.ttf);
+}
+
+label,
+button,
+legend {
+  font-family: bm;
+  font-size: 15px;
+}
+
+legend {
+  font-size: 17px;
+}
+
+form {
+  background-color: aliceblue;
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 40px;
+}
+fieldset {
+  margin-bottom: 15px;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 7px;
+  font-size: 12px;
+}
+
+button {
+  border: none;
+  padding: 7px;
+  background-color: rgba(0, 100, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* 개인정보 */
+.info_field li label {
+  display: inline-block;
+  width: 140px;
+}
+
+.info_field li label span {
+  color: red;
+}
+
+.p_code_box {
+  display: inline-block;
+  width: 70px;
+  /* background-color: blue; */
+}
+
+/* 검색 정보 */
+.sh_field label {
+  display: inline-block;
+  padding-left: 40px;
+  width: 140px;
+}
+
+/* 등록 정보 */
+.reg_field li label {
+  display: inline-block;
+  width: 180px;
+}
+
+/* 전송, 취소 */
+.last_btn {
+  text-align: right;
+  padding: 0;
+  border: none;
+}
+
+.last_btn button {
+  padding: 10px 20px;
+  margin-left: 10px;
+}

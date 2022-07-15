@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>별</title>
+
+  <style>
+    table {
+      background-color: #DAEBF1;
+      border-collapse: collapse;
+      text-align: left;
+      border: none;
+      margin: 0 auto;
+      margin-bottom: 50px;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: #B3CDF1;
+      text-align: center;
+    }
+
+    .t td:nth-child(2n+1) {
+      background: #D7F6F6;
+      color: black;
+    }
+
+    td {
+      padding: 10px;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // let star = '';
+    // for (let i = 0; i < 5; i++) {
+    //   for (let j = 0; j < i + 1; j++) {
+    //     star += '*';
+    //   }
+    //   star += '\n';
+    // }
+    // console.log(star);
+
+    // // p1.
+    // let hol_sum = 0;
+    // let zzak_sum = 0;
+    // for (let i = 1; i <= 100; i++) {
+    //   if (i % 2 == 0) {
+    //     hol_sum += i;
+    //   }
+    //   else {
+    //     zzak_sum += i;
+    //   }
+    // }
+    // console.log(`홀수 합 : ${hol_sum}, 짝수 합 : ${zzak_sum}`);
+    // // document.write(`홀수 합 : ${hol_sum}, 짝수 합 : ${zzak_sum}`);
+
+    // // p2.
+    // for (let i = 2; i <= 9; i++) {
+    //   for (let j = 1; j <= 9; j++) {
+    //     console.log(`${i} x ${j} = ${i * j}`);
+    //   }
+    //   document.write("</br>");
+    // }
+
+    // 구구단 - 테이블
+    document.write("<table class='t'>")
+    document.write("<tr>");
+    for (i = 2; i <= 9; i++) {
+      document.write("<th>" + i + "단</th>")
+    }
+    document.write("</tr>");
+    for (j = 1; j <= 9; j++) {
+      document.write("<tr>");
+      for (i = 2; i <= 9; i++) {
+        document.write("<td>" + i + " * " + j + " = " + i * j + "</td>");
+      }
+      document.write("</tr>");
+    }
+    document.write("</table>")
+
+
+    // 별 출력 - 마름모
+    document.write('<table>');
+    document.write('<tr>');
+    for (let i = 1; i <= 5; i++) {
+      for (let j = 4; j >= i; j--) {
+        document.write('<td>');
+        document.write('&nbsp');
+        document.write('</td>');
+      }
+      for (let k = 1; k <= 2 * i - 1; k++) {
+        document.write('<td>');
+        document.write('*');
+        document.write('</td>');
+      }
+      document.write('</tr>');
+    }
+    document.write('<tr>');
+    for (let i = 4; i >= 1; i--) {
+      for (let j = 1; j <= 5 - i; j++) {
+        document.write('<td>');
+        document.write('&nbsp');
+        document.write('</td>');
+      }
+      for (let k = 1; k <= 2 * i - 1; k++) {
+        document.write('<td>');
+        document.write('*');
+        document.write('</td>');
+      }
+      document.write('</tr>');
+    }
+  </script>
+
+</body>
+
+</html>

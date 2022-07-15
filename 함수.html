@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    div {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    button {
+      width: 300px;
+      height: 100px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body id="body_tag">
+  <script>
+    // let sum = function (a, b) {
+    //   let z = a + b;
+    //   return z;
+    // };
+
+    // console.log(sum(1, 1));
+    // console.log(sum(1, 1));
+    // console.log(sum(6, 1));
+
+    // let multiple = (a, b) => a * b;
+    // console.log(multiple(2, 4));
+
+    // // 콜백 함수
+    // function callTenTimes(func) {
+    //   for (let i = 0; i < 10; i++) {
+    //     func(i + 1);
+    //   }
+    // }
+
+    // let callback = (i) => console.log(`${i} 번째 함수호출`);
+
+    // callTenTimes(callback);
+
+    // // 리턴되는 함수
+    // function returnFunc() {
+    //   return function () {
+    //     console.log("helloFuction");
+    //   };
+    // }
+    // returnFunc()();
+
+    // // 자기 호출 함수
+    // (function () {
+    //   console.log("자기 호출 함수");
+    // })();
+
+    // p1.
+    function calAvg(name, kor, eng, math) {
+      console.log(name + " | " + kor + " | " + eng + " | " + math + " | 평균 : " + ((kor + eng + math) / 3).toFixed(3))
+    }
+    calAvg("홍길동", 70, 60, 90);
+    calAvg("성춘향", 90, 70, 90);
+    calAvg("이몽룡", 80, 60, 70);
+
+
+    // 버튼 클릭시 버튼 색상 변경
+    function get_random_integer(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    let cnt = 1;
+    function myEvent2() {
+      var R = get_random_integer(0, 255); 	 // 최소 = 0, 최대 = 255 
+      var G = get_random_integer(0, 255);
+      var B = get_random_integer(0, 255);
+
+      var R2 = get_random_integer(0, 255); 	 // 최소 = 0, 최대 = 255 
+      var G2 = get_random_integer(0, 255);
+      var B2 = get_random_integer(0, 255);
+
+      var rgbColor = "rgb(" + R + "," + G + "," + B + ")";
+      var rgbColor2 = "rgb(" + R2 + "," + G2 + "," + B2 + ")";
+
+      console.log(`${cnt}번째 버튼 컬러 rgb : ${rgbColor}, 배경 컬러 rgb : ${rgbColor2}`);
+      cnt++;
+
+      // getElementByID({id}) --> 해당 id 를 찾아서 태그를 반환
+      var bntTag = document.getElementById("change_color");
+      var bodyTag = document.getElementById("body_tag")
+      // 찾은 id 의 스타일 변경
+      bodyTag.style.backgroundColor = rgbColor;
+      bntTag.style.backgroundColor = rgbColor2;
+    }
+
+
+
+  </script>
+  <div>
+    <button id="change_color" onmouseover="myEvent2()">마우스를 대면 색상 랜덤 변경</button>
+  </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+/* 글씨체 */
+@font-face {
+  font-family: bamin;
+  src: url(../font/bamin/BMYEONSUNG_ttf.ttf);
+}
+
+* {
+  font-family: bamin;
+  text-decoration: none;
+}
+
+#container {
+  width: 850px;
+  /*딱 맞게 하려면 height 안주면 됨 */
+  /* height: 770px; */
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #faedf9;
+}
+
+/* header */
+header {
+  width: 890px;
+  background-color: #4488ee;
+  text-align: right;
+}
+
+header img {
+  width: 70px;
+  height: 70px;
+  float: left;
+  margin: 9px;
+}
+
+header ul {
+  margin: 0px;
+}
+
+header > ul > li {
+  display: inline-block;
+  /* background-color: red; */
+  margin: 30px;
+}
+
+header a {
+  font-size: 22px;
+  color: white;
+}
+
+/* section */
+section {
+  width: 100%;
+  /* float: left; */
+}
+
+.title {
+  margin-top: 0;
+  padding-top: 20px;
+  font-size: 30px;
+}
+
+#art1:hover {
+  background-color: white;
+  color: palevioletred;
+}
+
+#art2:hover {
+  background-color: white;
+  color: greenyellow;
+}
+
+#art3:hover {
+  background-color: white;
+  color: red;
+}
+
+#art4:hover {
+  background-color: white;
+  color: orange;
+}
+
+.box1 {
+  border: 2px solid violet;
+  padding: 10px;
+  border-radius: 20px;
+  border-style: dotted;
+  font-size: 18px;
+  width: 280px;
+  height: 300px;
+  float: left;
+  margin: 5px;
+}
+
+.box2 {
+  border: 2px solid #1ddc23;
+  padding: 10px;
+  border-radius: 20px;
+  border-style: dashed;
+  font-size: 18px;
+  width: 280px;
+  height: 300px;
+  float: left;
+  margin: 5px;
+}
+
+.box3 {
+  border: 2px solid #fd120e;
+  padding: 10px;
+  border-radius: 20px 0px 20px 0px;
+  border-style: dotted;
+  font-size: 18px;
+  width: 280px;
+  height: 300px;
+  float: left;
+  margin: 5px;
+}
+
+.box4 {
+  border: 2px solid orange;
+  padding: 10px;
+  border-radius: 0px 20px 0px 20px;
+  border-style: dotted;
+  font-size: 18px;
+  width: 280px;
+  height: 300px;
+  float: left;
+  margin: 5px;
+}
+
+/* aside */
+aside img {
+  width: 150px;
+  height: 215px;
+}
+
+aside {
+  float: right;
+  width: 140px;
+  height: 617px;
+  margin-right: 20px;
+}
+
+footer {
+  width: 850px;
+  padding: 5px 20px;
+  /* margin: 5px auto; */
+  background-color: #4488ee;
+  font-size: 20px;
+  clear: both;
+}
+
+h5 {
+  margin: 10px;
+}
+
+footer p {
+  margin: 10px;
+}

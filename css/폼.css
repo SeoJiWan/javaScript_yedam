@@ -1,0 +1,81 @@
+@font-face {
+  font-family: bm;
+  src: url(../font/bamin/BMEuljiro10yearslater.ttf);
+}
+
+* {
+  font-size: large;
+}
+
+label,
+legend {
+  font-family: bm;
+}
+
+form {
+  width: 500px;
+  margin: 0 auto;
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+fieldset {
+  margin-bottom: 20px;
+}
+
+fieldset legend {
+  text-align: center;
+  font-weight: 400;
+  font-size: 22px;
+}
+
+form ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  background-color: rgba(10, 150, 230, 0.3);
+  padding: 5px;
+  border-radius: 20px;
+  margin-right: 40px;
+}
+
+label {
+  /* inline 이라 width 가 안 먹음 -> display: inline-block */
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+  /* background-color: red; */
+}
+
+input {
+  padding: 5px;
+  width: 200px;
+}
+
+.select input {
+  width: 20px;
+}
+
+.select label {
+  width: 200px;
+}
+
+.ck li {
+  padding-left: 50px;
+}
+
+.btn {
+  border: none;
+  text-align: right;
+  padding: 0;
+}
+
+.btn input {
+  width: 80px;
+  font-family: bm;
+  border: none;
+  background-color: rgba(10, 150, 230, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+}

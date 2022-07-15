@@ -1,0 +1,82 @@
+/* 글씨체 */
+@font-face {
+  font-family: bamin;
+  src: url(../font/bamin/BMYEONSUNG_ttf.ttf);
+}
+
+* {
+  font-family: bamin;
+  text-decoration: none;
+}
+
+/* header */
+header {
+  width: 910px;
+  background-color: aliceblue;
+  margin: 0 auto;
+  text-align: right;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+header img {
+  width: 100px;
+  margin-left: 30px;
+  float: left;
+}
+
+header ul li {
+  display: inline-block;
+  margin: 30px;
+  font-size: 20px;
+}
+
+/* section */
+#container {
+  /* border: 2px solid orange; */
+  width: 900px;
+  margin: 0 auto;
+  border: 5px solid #04c;
+  /* height: 760px; */
+  /* float 된 자식들의 자리만 있다고 치는 방법*/
+  overflow: hidden;
+}
+
+section {
+  width: 510px;
+  padding: 20px 20px 0px 20px;
+  /* background-color: aqua; */
+  float: left;
+}
+
+article {
+  margin-bottom: 50px;
+  /* background-color: bisque; */
+}
+
+article h3 {
+  font-size: 24px;
+}
+
+/* aside */
+aside {
+  float: right;
+}
+
+aside img {
+  width: 280px;
+  height: 670px;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+
+/* footer */
+footer {
+  width: 870px;
+  background-color: aliceblue;
+  margin: 10px auto;
+  text-align: center;
+  clear: both;
+  font-size: 20px;
+  padding: 20px;
+}
