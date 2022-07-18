@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 크리스마스까지 남은 일수
+    let now = new Date();
+    console.log(now)
+    let xmas = new Date('2022, 12, 25');
+    console.log(xmas)
+    let remain = Math.floor((xmas - now) / 24 / 60 / 60 / 1000)
+    console.log(remain)
+
+
+
+    //// 로또 번호 생성
+    // 중복 허용
+    function lotto(n) {
+      let nums = [];
+      for (let i = 0; i < n; i++) {
+        let num = [];
+        for (let j = 0; j < 6; j++) {
+          num.push(Math.floor(Math.random() * 45) + 1);
+        }
+        nums.push(num)
+      }
+      return nums;
+    }
+
+    // 중복 제거
+    function lotto_v2(n) {
+      let nums = [];
+      for (let i = 0; i < n; i++) {
+        let num = [];
+        while (num.length < 6) {
+          let randNum = Math.floor(Math.random() * 45) + 1;
+          if (!num.includes(randNum)) {
+            num.push(randNum);
+          }
+        }
+        nums.push(num)
+      }
+      return nums;
+    }
+
+    console.log(lotto(5));
+    console.log(lotto_v2(5));
+
+
+
+
+    // 문자열과 문자열 객체
+
+    // const calc1 = '1+2*3';
+    // const calc2 = new String('1+2*3');
+    // console.log(eval(calc1));
+    // console.log(eval(calc2));
+    // console.log(eval(calc2.valueOf()))
+
+    let str1 = '문자열데이터';
+    let str2 = new String('문자열데이터');
+    let str3 = new String('문자열데이터');
+    let str4 = str3.valueOf();
+    let calc1 = '1+2*3'
+    let calc2 = new String('1+2*3');
+
+    console.log(typeof (str1));
+    console.log(typeof (str2));
+    console.log(typeof (str3));
+    console.log(typeof (str4));
+
+    console.log(str1 == str2);
+    console.log(str1 === str2);
+    console.log(str2 == str3);
+    console.log(str2 == str3.valueOf());
+
+    console.log(new String('문자열') == str2);
+    console.log(new String('문자열') === str1);
+
+    console.log(new String('문자열') == '문자열'); //true
+    console.log(new String('문자열') == str1); //true
+
+    console.log(new String('문자열') == new String('문자열'));
+    console.log(new String('문자열') === new String('문자열'));
+    console.log(str2 == str3);
+    console.log(str2 === str3);
+
+    console.log('문자열' == new String('문자열'));
+    console.log('문자열' === new String('문자열'));
+
+    console.log(typeof (eval(calc1)));
+    console.log(typeof (eval(calc2)));
+
+    var calc3 = eval(calc2);
+    console.log(typeof (calc3));
+
+    let str159 = '    how are    you     to      day   everyone.  ';
+    console.log(str159)
+    console.log(str159.replace(/\s/g, ''));
+    console.log(str159.split(' '))
+    console.log(str159.split(' ').filter(el => el != '').join(' '))
+    console.log(str159.replace(/\s+/g, ' '));
+
+
+
+
+    // 문자열 자르기
+    const str160 = 'This is the only one story';
+    console.log(str160.slice(8, 11))
+    console.log(str160.slice(-8, 11))
+    console.log(str160.slice(10, 4))
+    console.log(str160.slice(100))
+    console.log(str160.slice(0, -10))
+    console.log(str160.slice(8, 100))
+
+    console.log('---------------------')
+    console.log(str160.substring(8, 11))
+    console.log(str160.substring(11, 8)) // --> (8, 11)
+    console.log(str160.substring(11, -8)) // --> (11, 0) --> (0, 11)
+    console.log(str160.substring(0, -10))
+    console.log(str160.substring())
+
+
+    console.log(str160.substr(8, 11)) // the only on
+
+    const str165 = 'good morning, good afternoon, good evening, and good night'
+    console.log(str165.indexOf('good', 15))
+
+    console.log(str165.includes('good')) // true
+    console.log(str165.includes('baam')) // false
+
+    console.log(str165.charAt(30)) // g
+    console.log(str165.charAt(100)) // ''
+
+    const str167 = 'bad morning, good afternoon, good evening'
+    console.log(str167.match(/good\s\w+/gi))
+    console.log(str167.match(/bad\s\w+/gi))
+    console.log(str167.match(/none\s\w+/gi))
+    console.log(str167.match('good'))
+
+    // 첫 'good' 이 'bad' 로 바뀜
+    console.log(str167.replace('good', 'bad')) // bad morning, bad afternoon, good evening
+    // 첫 'good' 이 'bad' 로 바뀜
+    console.log(str167.replace(/good/i, 'bad')) // bad morning, bad afternoon, good evening
+    // 모든 'good' 이 'bad' 로 바뀜
+    console.log(str167.replace(/good/gi, 'bad')) // bad morning, bad afternoon, bad evening
+
+
+    const str11 = '문자열1';
+    const str22 = '문자열2';
+    console.log(str11.concat(str22));
+    console.log(''.concat(str11, str22));
+
+    let strArr = ['good', ' ', 'morning ', '!']
+    console.log(''.concat(...strArr));
+
+
+    console.log('------------------------------');
+    let strrr = 'good';
+    let result = taggedFunc`${str1} morning, ${str1} afternoon, ${str1} evening, and ${str1} night`;
+    console.log(result);
+
+    function taggedFunc(strings, exp) {
+      let ret = '';
+      for (let idx = 1; idx < strings.length; idx++) {
+        if (idx < strings.length - 1) {
+          ret += 'bad' + strings[idx]
+        }
+        else {
+          ret += 'moon' + strings[idx];
+        }
+      }
+      return ret;
+    }
+
+    let fri = [{ name: '라이언', age: 5 }, { name: '어피치', age: 1 }, { name: '프로도', age: 3 }]
+    let temp = `<ul>
+      <li>이름 : ${fri[0].name}, 나이 : ${fri[0].age}</li>
+      <li>이름 : ${fri[1].name}, 나이 : ${fri[1].age}</li>
+      <li>이름 : ${fri[2].name}, 나이 : ${fri[2].age}</li>
+      `
+    console.log(temp)
+    document.write(temp)
+
+  </script>
+
+</body>
+
+</html>

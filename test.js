@@ -145,47 +145,178 @@
 // let product = new Product("돼지삼겹살", 100, 1690);
 // console.log(product.name + " : " + product.caculate(300) + "원");
 
-let friends = {
-  brand: "카카오",
-  original: [
-    { name: "라이언", age: 5 },
-    { name: "어피치", age: 4 },
-  ],
-  newbee: { name: "네온", age: 3 },
-};
+// let friends = {
+//   brand: "카카오",
+//   original: [
+//     { name: "라이언", age: 5 },
+//     { name: "어피치", age: 4 },
+//   ],
+//   newbee: { name: "네온", age: 3 },
+// };
 
-console.log(friends["newbee"]);
-console.log(friends.original[0].name); // 라이언
-console.log(friends["original"][0].name); // 라이언
-console.log(friends["newbee"]["name"]);
-console.log("-------------------------------------------");
+// console.log(friends["newbee"]);
+// console.log(friends.original[0].name); // 라이언
+// console.log(friends["original"][0].name); // 라이언
+// console.log(friends["newbee"]["name"]);
+// console.log("-------------------------------------------");
 
-// 속성 값 얻기
-console.log(friends.original[0]); // name: "라이언", age: 5
-console.log(friends.original[1].age); // 4
-console.log(friends.original.length); // 2
-console.log(friends.original[0].name); // 라이언
-console.log(friends.newbee.name); // 네온
-console.log("-------------------------------------------");
+// // 속성 값 얻기
+// console.log(friends.original[0]); // name: "라이언", age: 5
+// console.log(friends.original[1].age); // 4
+// console.log(friends.original.length); // 2
+// console.log(friends.original[0].name); // 라이언
+// console.log(friends.newbee.name); // 네온
+// console.log("-------------------------------------------");
 
-// 속성 추가
-friends.newbee["sex"] = "female";
-// 객체 배열로 변환
-friends["newbee"] = [friends["newbee"], { name: "콘", age: 2 }];
-console.log(friends.newbee); // {name: "네온", age: 3, sex: "female"}, {name: "콘", age: 2}
-console.log("-------------------------------------------");
+// // 속성 추가
+// friends.newbee["sex"] = "female";
+// // 객체 배열로 변환
+// friends["newbee"] = [friends["newbee"], { name: "콘", age: 2 }];
+// console.log(friends.newbee); // {name: "네온", age: 3, sex: "female"}, {name: "콘", age: 2}
+// console.log("-------------------------------------------");
 
-// 속성 수정
-friends.newbee[0]["sex"] = "male";
-friends.newbee.sex = "unknown";
-console.log(friends.newbee); // {name: "네온", age: 3, sex: 'male}, {name: "콘", age: 2}, sex: 'unknown'
-console.log("-------------------------------------------");
+// // 속성 수정
+// friends.newbee[0]["sex"] = "male";
+// friends.newbee.sex = "unknown";
+// console.log(friends.newbee); // {name: "네온", age: 3, sex: 'male}, {name: "콘", age: 2}, sex: 'unknown'
+// console.log("-------------------------------------------");
 
-// 속성 삭제
-delete friends.newbee[0].sex;
-// 배열의 마지막 요소 삭제
-friends.newbee.pop();
-friends.newbee.pop();
-delete friends.brand;
-console.log(friends);
-console.log("-------------------------------------------");
+// // 속성 삭제
+// delete friends.newbee[0].sex;
+// // 배열의 마지막 요소 삭제
+// friends.newbee.pop();
+// friends.newbee.pop();
+// delete friends.brand;
+// console.log(friends);
+// console.log("-------------------------------------------");
+
+// === 배열 220718 ===
+let seasons = ["봄", "여름", "가을", "겨울"];
+let color = ["초록", "빨강", "갈색", "흰색"];
+
+console.log(seasons);
+console.log(seasons.length);
+console.log(seasons[2]);
+
+// for문으로 배열 출력
+console.log("=== for 문 ===");
+for (let i = 0; i < seasons.length; i++) {
+  console.log(seasons[i]);
+}
+
+// forin --> 인덱스를 가져옴
+console.log("=== forin 문 ===");
+for (let i in seasons) {
+  console.log(seasons[i]);
+}
+
+// forof --> 요소를 가져옴
+console.log("=== forof 문 ===");
+for (let elem of seasons) {
+  console.log(elem);
+}
+
+// foreach
+console.log("=== foreach 문 ===");
+seasons.forEach((element) => {
+  console.log(element);
+});
+
+// 배열 두개 컨캣
+let concatArr = seasons.concat(color);
+console.log(concatArr);
+console.log(concatArr.length);
+
+// 배열 조인
+console.log(seasons.join("::"));
+
+// 배열 리버스
+// console.log(seasons.reverse());
+
+// 요소 추가
+color.push("검정"); // 배열의 끝에 추가
+color.unshift("주황"); // 배열의 시작에 추가
+console.log(color);
+
+// 요소 삭제
+// color.pop("검정"); // 배열의 마지막 원소 삭제
+// color.shift("주황"); // 배열의 첫 원소 삭제
+console.log(color);
+
+// 원하는 인덱스 요소 삭제 - splice(시작번호, 삭제 개수, 추가요소)
+// color.splice(2);
+// console.log(color);
+// color.splice(2, 3);
+// console.log(color);
+// color.splice(2, 3, "노랑");
+// console.log(color);
+
+// 요소 slice
+// let myColor = color.splice(3);
+// console.log(myColor);
+// console.log(color.splice(1, 4));
+
+// 배열인지 확인
+console.log(Array.isArray(color));
+
+// 요소의 인덱스 반환
+console.log(color);
+console.log(color.indexOf("갈색"));
+console.log(color.indexOf("파랑"));
+
+console.log(color.lastIndexOf("갈색"));
+console.log(color.lastIndexOf("파랑"));
+
+// foreach()
+color.forEach(function (elem, idx) {
+  console.log(`index : ${idx}, element : ${elem}`);
+});
+
+color.forEach((elem, idx) => console.log(idx, elem));
+
+// map() : 기존 배열을 이용해 새로운 배열 생성
+let arr = [1, 2, 3, 4, 5];
+let mapArr = arr.map(function (elem) {
+  return elem * elem;
+});
+console.log(mapArr);
+
+// filter() : 특정조건 만족하는 요소 추출 -> 새로운 배열 생성
+// every() : and, some() : or
+let filterArr = arr.filter(function (elem) {
+  return elem <= 3;
+});
+console.log(filterArr);
+
+function lessthan3(element, index, array) {
+  return element <= 3;
+}
+let everylt3 = arr.every(lessthan3);
+console.log(everylt3);
+let somelt3 = arr.some(lessthan3);
+console.log(somelt3);
+
+// reudce() : 왼쪽에서 두 개씩 묶어 하나가 될 때까지 줄여가는 연산
+// reduceRight() : 오른쪽에서 두 개씩 묶어 하나가 될 때까지 줄여가는 연산
+let reduceArr = arr.reduce(function (pre, cur) {
+  console.log(`pre : ${pre}, cur : ${cur}`);
+  return pre + cur;
+});
+console.log(reduceArr);
+
+// sort()
+let arrNum = [2, 7, 5, 3, 10];
+console.log(arrNum);
+console.log(arrNum.sort()); // 유니코드 순서에 따라서 정렬
+console.log(
+  arrNum.sort(function (a, b) {
+    return a - b;
+  })
+);
+
+console.log(color);
+console.log(
+  color.sort(function (a, b) {
+    return a > b ? 1 : -1;
+  })
+);
