@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>타이머</title>
+
+  <link rel="stylesheet" href="css/타이머.css">
+
+</head>
+
+<body>
+  <div id="container">
+    <form>
+      <label><input type="text" id="startMin">분</label>
+      <label><input type="text" id="startSec">초</label>
+
+      <!-- <input type="button" class="start-btn" value="START" onclick="startTimer()">
+      <input type="button" class="reset-btn" value="RESET" onclick="resetTimer()"> -->
+      <button class="start-btn" onclick="startTimer()" type="button">START</button>
+      <button class="reset-btn" onclick="resetTimer()" type="button">RESET</button>
+
+    </form>
+    <div id="display" class="remaining"></div>
+    <!-- <img src="https://en.pimg.jp/065/681/795/1/65681795.jpg" alt="run"> -->
+    <div class="cnt_bar">
+      <div class="cnt"></div>
+    </div>
+  </div>
+
+  <!-- <script src="js/타이머.js"></script> -->
+
+  <script>
+    // 자스는 데이터가 입력될때 형이 결정된다.
+    let min = '';
+    let sec = '';
+    let timerId = '';
+    let totalSec;
+    let curTotalSec;
+    document.querySelector('.cnt').style.width = '0%'
+
+    function startTimer() {
+      min = document.querySelector('#startMin').value;
+      sec = document.querySelector('#startSec').value;
+      if (min == '') {
+        min = 0;
+      }
+      if (sec == '') {
+        sec = 0;
+      }
+      // console.log(`min : ${min}`)
+      // console.log(`sec : ${sec}`)
+      document.querySelector('#display').innerText = `${min} : ${sec}`;
+      document.querySelector('.cnt').style.width = '100%'
+      totalSec = (Number(sec) + Number(min) * 60);
+      // totalSec = (sec + min * 60);
+      // console.log(`totalSec : ${totalSec}`)
+
+      timerId = setInterval(countTime, 1000);
+    }
+
+    function countTime() {
+      if (sec != 0) {
+        sec--;
+        // curTotalSec = (sec + min * 60);
+        curTotalSec = (Number(sec) + Number(min) * 60);
+        // console.log(`curTotalSec : ${curTotalSec}`)
+        document.querySelector('.cnt').style.width = ((curTotalSec) / totalSec * 100) + '%'
+        document.querySelector('#display').innerText = `${min} : ${sec}`;
+      }
+      else {
+        if (min != 0) {
+          sec = 59;
+          min--;
+        }
+        else {
+          terminateTimer(timerId);
+        }
+      }
+    }
+
+    function terminateTimer(t) {
+      clearInterval(t);
+      document.querySelector('#startMin').value = '';
+      document.querySelector('#startSec').value = '';
+      document.querySelector('#display').innerText = '';
+      document.querySelector('.cnt').style.width = '0%'
+    }
+
+    function resetTimer() {
+      terminateTimer(timerId);
+    }
+  </script>
+</body>
+
+</html>

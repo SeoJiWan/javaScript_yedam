@@ -1,0 +1,78 @@
+@font-face {
+  font-family: bm;
+  src: url(../font/bamin/BMJUA_ttf.ttf);
+}
+
+* {
+  font-family: bm;
+  font-size: 25px;
+}
+
+#container {
+  margin: 0 auto;
+  width: 55%;
+  border: 3px dashed black;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.day1 {
+  height: 300px;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.day1 p {
+  font-size: 30px;
+}
+
+.cnt_bar {
+  width: 70%;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 60px;
+  background-color: darkblue;
+  border-radius: 5px;
+}
+
+.cnt {
+  height: 40px;
+  background-color: #f6f656;
+  border-radius: 5px;
+  color: darkblue;
+  line-height: 40px;
+}
+
+/* .cnt:hover {
+  background-color: #f6f656;
+} */
+
+.bar {
+  background-color: black;
+  color: white;
+  text-align: left;
+  padding: 6px;
+}
+
+table {
+  margin: 10px auto;
+  border-collapse: collapse;
+  /* background-color: #f6f656; */
+  width: 90%;
+}
+
+tr:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+td {
+  padding: 20px;
+  /* border: 1px solid black; */
+}
+
+.intem_date {
+  font-size: 22px;
+}
