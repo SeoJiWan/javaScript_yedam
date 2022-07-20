@@ -22,7 +22,7 @@ calcDate(365);
 calcDate(500);
 
 function calcDate(days) {
-  let futureTime = toNow + days * 1000 * 60 * 60 * 24;
+  let futureTime = toFirst + days * 1000 * 60 * 60 * 24;
   // 일, 시간 반환
   let futureDay = new Date(futureTime);
   console.log(futureDay);

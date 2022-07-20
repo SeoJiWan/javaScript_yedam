@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>성적처리</title>
+
+  <style>
+    table {
+      border-collapse: collapse;
+      font-size: 20px;
+    }
+
+    td {
+      padding: 20px;
+      border: 2px solid #000
+    }
+
+    .title {
+      background-color: #ddd;
+    }
+
+    .highlight {
+      background-color: rgba(255, 255, 50, 0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // 1. 생성자 함수 생성
+    function Student(name, kor, eng, math, art) {
+      this.name = name;
+      this.kor = kor;
+      this.eng = eng;
+      this.math = math;
+      this.art = art;
+    }
+
+    // 2. prototype 메서드 생성
+    Student.prototype.getSum = function () {
+      return this.kor + this.eng + this.math + this.art;
+    }
+
+    Student.prototype.getAvg = function () {
+      return this.getSum() / (Student.length - 1);
+    }
+
+    Student.prototype.toResult = function () {
+      return `<tr>
+              <td>${this.name}</td>
+              <td class="highlight">${this.getSum()}</td>
+              <td class="highlight">${this.getAvg()}</td>
+              <td>${this.kor}</td>
+              <td>${this.eng}</td>
+              <td>${this.math}</td>
+              <td>${this.art}</td>
+              </tr>`
+    }
+
+    function randScore() {
+      return score = Math.floor(Math.random() * 100);
+    }
+
+    // 3. 배열에 학생 객체 삽입
+    let studentList = [];
+    studentList.push(new Student('aaa', randScore(), randScore(), randScore(), randScore()))
+    studentList.push(new Student('bbb', randScore(), randScore(), randScore(), randScore()))
+    studentList.push(new Student('ccc', randScore(), randScore(), randScore(), randScore()))
+    studentList.push(new Student('ddd', randScore(), randScore(), randScore(), randScore()))
+    studentList.push(new Student('eee', randScore(), randScore(), randScore(), randScore()))
+
+
+
+    // 4. 성적 출력 
+    let list = `<table>
+      <tr class="title">
+        <td>이름</td>
+        <td>총점</td>
+        <td>평균</td>
+        <td>kor</td>
+        <td>eng</td>
+        <td>math</td>
+        <td>art</td>
+      </tr>`
+    for (let i = 0; i < studentList.length; i++) {
+      list += studentList[i].toResult() + '\n';
+    }
+
+    list += '</table>'
+    document.write(list)
+
+
+
+  </script>
+</body>
+
+</html>
