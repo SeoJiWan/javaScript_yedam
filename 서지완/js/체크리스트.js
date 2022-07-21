@@ -105,13 +105,13 @@ function clickedItem() {
 
 // 선택 아이템 삭제
 function removeSelected() {
-  console.log("error");
+  // console.log("error");
   for (let i = 0; i < clickedList.length; i++) {
     itemList.splice(clickedList[i], 1);
-    console.log("error2");
+    // console.log("error2");
   }
-  console.log(clickedList);
-  console.log(itemList);
+  // console.log(clickedList);
+  // console.log(itemList);
   clickedList.splice(0, clickedList.length);
   showList();
 }
