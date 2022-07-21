@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>회원가입</title>
+    <link rel="stylesheet" href="css/회원가입폼.css" />
+    <!-- script defer : html 문서 로딩 후 스크립트 적용 -->
+    <script defer src="js/회원가입폼.js"></script>
+  </head>
 
-  <link rel="stylesheet" href="css/회원가입폼.css">
-  <!-- script defer : html 문서 로딩 후 스크립트 적용 -->
-  <script defer src="js/회원가입폼.js"></script>
-</head>
-
-<body>
-  <form action="#">
-    <h1>회원가입</h1>
-    <table>
-      <tr>
-        <td>아이디</td>
-        <td><input type="text" id="user_id" placeholder="4~15 자리의 영문과 숫자 입력" required></td>
-      </tr>
-      <tr>
-        <td>이메일</td>
-        <td><input type="email" id="email" required></td>
-      </tr>
-      <tr>
-        <td>비밀번호</td>
-        <td><input type="password" id="pwd" placeholder="8자리 이상" required></td>
-      </tr>
-      <tr>
-        <td>비밀번호 확인</td>
-        <td><input type="password" id="ck_pwd"></td>
-      </tr>
-      <tr>
-        <td>메일링 수신</td>
-        <td class="radio">
-          <input type="radio" name="recieve_mail" id="y" value="y" checked>예
-          <input type="radio" name="recieve_mail" id="n" value="n">아니오
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2" class="btn">
-          <button type="submit" id="submit_btn">가입하기</button>
-          <button type="reset">취소</button>
-        </td>
-
-      </tr>
-    </table>
-
-  </form>
-</body>
-
+  <body>
+    <form action="#">
+      <h1>회원가입</h1>
+      <table>
+        <tr>
+          <td>아이디</td>
+          <td>
+            <input
+              type="text"
+              id="user_id"
+              placeholder="4~15 자리의 영문과 숫자 입력"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>이메일</td>
+          <td><input type="email" id="email" required /></td>
+        </tr>
+        <tr>
+          <td>비밀번호</td>
+          <td>
+            <input type="password" id="pwd" placeholder="8자리 이상" required />
+          </td>
+        </tr>
+        <tr>
+          <td>비밀번호 확인</td>
+          <td><input type="password" id="ck_pwd" /></td>
+        </tr>
+        <tr>
+          <td>메일링 수신</td>
+          <td class="radio">
+            <input
+              type="radio"
+              name="recieve_mail"
+              id="y"
+              value="y"
+              checked
+            />예
+            <input type="radio" name="recieve_mail" id="n" value="n" />아니오
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" class="btn">
+            <button type="submit" id="submit_btn">가입하기</button>
+            <button type="reset">취소</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
 </html>

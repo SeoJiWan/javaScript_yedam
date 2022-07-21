@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기념일 계산</title>
+
+    <link rel="stylesheet" href="css/기념일계산.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="day1">
+        <h2>예담 다닌지</h2>
+        <p id="accent" class="accent">며칠?</p>
+        <div class="cnt_bar">
+          <div class="cnt"></div>
+        </div>
+      </div>
+      <div class="bar">기념일 계산</div>
+      <div class="day2">
+        <table>
+          <tr>
+            <td class="item_title">100일</td>
+            <td class="intem_date" id="day100"></td>
+          </tr>
+          <tr>
+            <td class="item_title">200일</td>
+            <td class="intem_date" id="day200"></td>
+          </tr>
+          <tr>
+            <td class="item_title">1년</td>
+            <td class="intem_date" id="day365"></td>
+          </tr>
+          <tr>
+            <td class="item_title">500일</td>
+            <td class="intem_date" id="day500"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- <script src="js/기념일계산.js"></script> -->
+    <script>
+      let startDay = new Date("2022-05-09");
+      let finishDay = new Date("2022-11-09");
+      let now = new Date();
+
+      let startTime = startDay.getTime();
+      let finishTime = finishDay.getTime();
+      let totalTime = finishTime - startTime;
+      let nowTime = now.getTime();
+      let meetTime = nowTime - startTime;
+      let meetPercent = ((meetTime / totalTime) * 100).toFixed(2);
+      let meeetDay = Math.floor(meetTime / 1000 / 60 / 60 / 24);
+
+      document.querySelector("#accent").innerText = meeetDay + "일";
+
+      calcday(100);
+      calcday(200);
+      calcday(365);
+      calcday(500);
+
+      function calcday(days) {
+        let dDayTime = startTime + days * 1000 * 60 * 60 * 24;
+        let dDay = new Date(dDayTime);
+        let year = dDay.getFullYear();
+        let month = dDay.getMonth() + 1;
+        let day = dDay.getDate();
+        document.querySelector(
+          "#day" + days
+        ).innerText = `${year} 년 ${month} 월 ${day} 일`;
+
+        document.querySelector(".cnt").style.width = meetPercent + "%";
+        document.querySelector(".cnt").innerText = meetPercent + "%";
+      }
+    </script>
+  </body>
+</html>
