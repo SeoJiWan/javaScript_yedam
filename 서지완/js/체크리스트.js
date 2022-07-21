@@ -19,7 +19,7 @@ document.querySelector("#item").addEventListener("keypress", function (e) {
 // 선택삭제 버튼 클릭 시 선택 삭제 이벤트 발생
 document
   .querySelector("#remove_selected")
-  .addEventListener("click", removeSelected);
+  .addEventListener("click", removeSelectedItem);
 
 // 전체 삭제 버튼 클릭 시 전체 삭제 이벤트 발생
 document.querySelector("#remove_all").addEventListener("click", removeAllItems);
@@ -97,13 +97,17 @@ function removeAllItems() {
 
 // 아이템 선택 메서드
 function clickedItem() {
+  // 선택된 아이템들은 스타일 변환
   this.style.color = "white";
   this.style.backgroundColor = "black";
+  // 선택리스트에 추가 -> 원소 = itemList 원소들의 인덱스
   clickedList.push(this.getAttribute("id"));
   console.log(clickedList);
+  console.log(itemList);
 }
 
 // 선택 아이템 삭제
+<<<<<<< HEAD
 function removeSelected() {
   // console.log("error");
   for (let i = 0; i < clickedList.length; i++) {
@@ -112,6 +116,23 @@ function removeSelected() {
   }
   // console.log(clickedList);
   // console.log(itemList);
+=======
+function removeSelectedItem() {
+  // 선택 리스트에 있는 원소들을 이용하여 아이템 리스트의 아이템 삭제 하고 0 삽입
+  // --> 0 삽입이유 : 여러 개 삭제 시 길이가 줄어들어 인덱스변화를 방지하기 위함
+  for (let i = 0; i < clickedList.length; i++) {
+    console.log(itemList[clickedList[i]]);
+    itemList.splice(clickedList[i], 1, 0);
+  }
+  // 아이템 리스트에서 0을 제외한 원소들로만 tmp 구성
+  let tmp = itemList.filter((elem) => elem != 0);
+  // 아이템 리스트 전체 삭제
+  itemList.splice(0, itemList.length);
+  // tmp 의 원소들을 아이템 리스트에 복사
+  itemList = tmp;
+  // 클릭 리스트 초기화
+>>>>>>> c4e80706a643af4375e3cc2ff69b686c56a73db4
   clickedList.splice(0, clickedList.length);
+  // 아이템 리스트 출력
   showList();
 }
