@@ -107,7 +107,6 @@ function clickedItem() {
 }
 
 // 선택 아이템 삭제
-<<<<<<< HEAD
 function removeSelected() {
   // console.log("error");
   for (let i = 0; i < clickedList.length; i++) {
@@ -116,7 +115,7 @@ function removeSelected() {
   }
   // console.log(clickedList);
   // console.log(itemList);
-=======
+}
 function removeSelectedItem() {
   // 선택 리스트에 있는 원소들을 이용하여 아이템 리스트의 아이템 삭제 하고 0 삽입
   // --> 0 삽입이유 : 여러 개 삭제 시 길이가 줄어들어 인덱스변화를 방지하기 위함
@@ -131,7 +130,6 @@ function removeSelectedItem() {
   // tmp 의 원소들을 아이템 리스트에 복사
   itemList = tmp;
   // 클릭 리스트 초기화
->>>>>>> c4e80706a643af4375e3cc2ff69b686c56a73db4
   clickedList.splice(0, clickedList.length);
   // 아이템 리스트 출력
   showList();
